@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_gravity="center"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/etWaybillId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btnCheckWB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/check" />
+
+    <Button
+        android:id="@+id/Scan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/scan" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:checkedButton="@id/rb80mm">
+
+        <RadioButton
+            android:id="@+id/rb58mm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/type58mm" />
+
+        <RadioButton
+            android:id="@+id/rb80mm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/type80mm" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/mPrint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/print" />
+
+    <Button
+        android:id="@+id/dis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Dissable" />
+
+    <EditText
+        android:id="@+id/etReceiver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/receiver" />
+
+    <EditText
+        android:id="@+id/etSender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/sender" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/ivQRCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:srcCompat="@tools:sample/avatars" />
+</LinearLayout>
