@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity implements Runnable {
                                 os.write(PrinterCommands.PRINT_PDF417);
                                 */
 
-                                Bitmap bitmap = QRCodeHelper.encodeAsBitmap(mETWaybillId.getText().toString(), BarcodeFormat.QR_CODE, 100, 100);
+                                Bitmap bitmap = QRCodeHelper.encodeAsBitmap(mETWaybillId.getText().toString(), BarcodeFormat.QR_CODE, 200, 200);
                                 if (bitmap!=null) {
                                     //os.write(PrinterCommands.SELECT_BIT_IMAGE_MODE);
                                     byte[] command = Utils.decodeBitmap(bitmap);
@@ -160,11 +160,10 @@ public class MainActivity extends AppCompatActivity implements Runnable {
                                     os.write(PrintCMD.printAsBarcode2D(mETWaybillId.getText().toString()));
                                     os.write(PrinterCommands.FEED_LINE);
                                 }
-
                             }
-                            content = String.format("\n %1$s", mETWaybillId.getText().toString());
-                            content = content + String.format("\n %1$s", mETSender.getText().toString());
-                            content = content + String.format("\n %1$s", mETReceiver.getText().toString());
+                            //content = String.format("\n %1$s", mETWaybillId.getText().toString());
+                            content = String.format("%1$s", mETSender.getText().toString());
+                            content = content + String.format("\n%1$s", mETReceiver.getText().toString());
                             content = content + "\n\n --- BTPrinter 2 --\n";
                             os.write(content.getBytes());
                             //<-- DAR

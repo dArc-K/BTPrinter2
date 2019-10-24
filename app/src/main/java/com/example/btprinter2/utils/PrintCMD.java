@@ -50,17 +50,15 @@ public class PrintCMD {
     public static byte[] printAsBarcode2D(String pStrValue)
     {
         final byte[] contents = pStrValue.getBytes();
-        final byte length = (byte) contents.length;    //ByteHelper.commandByteRepresentation(10);
+        final byte length = (byte) contents.length;
         final byte height = ByteHelper.commandByteRepresentation(0);
-        final byte[] formats  = {(byte) 0x1d, (byte) 0x28, (byte) 0x4c, length, height, ByteHelper.commandByteRepresentation(48), ByteHelper.commandByteRepresentation(50)};
+        final byte[] formats  = { PrinterCommands.GS, (byte) 0x28, (byte) 0x4c, length, height, ByteHelper.commandByteRepresentation(48), ByteHelper.commandByteRepresentation(50)};
 
         byte[] bytes    = new byte[formats.length + contents.length];
 
         System.arraycopy(formats, 0, bytes, 0, formats.length);
         System.arraycopy(contents, 0, bytes, formats.length, contents.length);
 
-        // add a terminating NULL
-        //bytes[formats.length + contents.length] = (byte) 0x00;
         return bytes;
     }
 }
